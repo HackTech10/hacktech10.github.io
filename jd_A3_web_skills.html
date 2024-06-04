@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!--
+	This is the web skills page, I assume this is where I will be linking large amounts of javascript and well designed styles to show off my web development skills
+	Joshua de Roover 25/03/24
+	-->
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="css/style.css" rel="stylesheet" type="text/css" />
+	<link rel="shortcut icon" href="http://plefungaprogramming.eu5.org/android-icon-192x192.png" type="image/x-icon" />
+	<title>Web Skills</title>
+</head>
+<body>
+	<header>
+		<h1>
+			Web Skills
+		</h1>
+		<nav>
+			<a class="nav" href="index.html">Home</a> | 
+			<a class="nav" href="jd_A3_about.html">About</a> | 
+			<a class="nav" href="jd_A3_resume.html">Resume</a> | 
+			<a class="nav" href="jd_A3_web_skills.html">Web Skills</a> | 
+			<a class="nav" href="jd_A3_other_sites.html">Other Sites By Me</a> | 
+			<a class="nav" href="jd_A3_python_skills.html">Python Skills</a> | 
+			<a class="nav" href="jd_A3_scratch.html">My Scratch projects</a> | 
+			<a class="nav" href="http://plefungaprogramming.eu5.org">More from me</a>
+		</nav>
+	</header>
+	<hr>
+	<h2>Dice rolling with Javascript!</h2>
+	<script>
+		var ones = 0;
+		var twos = 0;
+		var threes = 0;
+		var fours = 0;
+		var fives = 0;
+		var sixes = 0;
+		var hash = "#";
+
+		function rollDice() {
+			var output = document.getElementById("output");
+			var dice1 = Math.floor(Math.random() * 6) + 1;
+			output.innerHTML = "You rolled a " + dice1;
+			if (dice1 == 1) {
+				ones++;
+			}
+			else if (dice1 == 2) {
+				twos++;
+			}
+			else if (dice1 == 3) {
+				threes++;
+			}
+			else if (dice1 == 4) {
+				fours++;
+			}
+			else if (dice1 == 5) {
+				fives++;
+			}
+			else if (dice1 == 6) {
+				sixes++;
+			}
+			document.getElementById("ones").innerHTML = ones;
+			document.getElementById("twos").innerHTML = twos;
+			document.getElementById("threes").innerHTML = threes;
+			document.getElementById("fours").innerHTML = fours;
+			document.getElementById("fives").innerHTML = fives;
+			document.getElementById("sixes").innerHTML = sixes;
+			document.getElementById("graph").innerHTML = "Bar graph of each side (see how computers aren't actually very good at random numbers): <br />"+"1: "+hash.repeat(ones)+"<br />"+"2: "+hash.repeat(twos)+"<br />"+"3: "+hash.repeat(threes)+"<br />"+"4: "+hash.repeat(fours)+"<br />"+"5: "+hash.repeat(fives)+"<br />"+"6: "+hash.repeat(sixes)+"<br />";
+		}
+	</script>
+	</head>
+	<body>
+	<button onclick="rollDice()">Roll the dice</button>
+	<p id="output"></p>
+	<table>
+		<tr>
+			<th> Number of 1's </th>
+			<th> Number of 2's </th>
+			<th> Number of 3's </th>
+			<th> Number of 4's </th>
+			<th> Number of 5's </th>
+			<th> Number of 6's </th>
+		</tr>
+		<tr>
+			<td id="ones">none</td>
+			<td id="twos">none</td>
+			<td id="threes">none</td>
+			<td id="fours">none</td>
+			<td id="fives">none</td>
+			<td id="sixes">none</td>
+		</tr>
+	</table>
+	<p id="graph"></p>
+	<footer>
+		<address>
+			Contact: Josh de Roover <br />Ph: +61 31 415 926 <br /> Email: <a href="mailto:joshderoover@plefunga.com" target="_blank">joshderoover@plefunga.com</a>
+		</address>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!--
+	This is the java script form page
+	Joshua de Roover 2/06/24
+	-->
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="css/style.css" rel="stylesheet" type="text/css" />
+	<link rel="shortcut icon" href="http://plefungaprogramming.eu5.org/android-icon-192x192.png" type="image/x-icon" />
+	<title>Sign up for our newsletter!</title>
+	<script>
+		alert("Welcome to the XYZHealthcare Corporation/Ltd.- Newsletter Signup")
+		//reset the form
+		function resetForm(){
+			document.getElementById("myForm").reset();
+		}
+		function postForm(){
+			fetch("http://csusap.csu.edu.au/cgi-bin/echo_form", {method: "POST", body: document.getElementById('myForm')});
+			alert("Successfully Submitted!");
+			resetForm();
+		}
+		function submitForm() {
+			//validation of form inputs
+			var issue = 0;
+			var fname = document.getElementById("fname").value;
+			var lname = document.getElementById("lname").value;
+			var email = document.getElementById("email").value;
+			var radio = document.querySelector('input[name="age"]:checked');
+			if (fname == "") {issue++;}
+			else if (lname == "") {issue++;}
+			else if (email == "") {issue++;}
+			else if (radio == "") {issue++;}
+			else if (document.getElementById("topic1").checked || document.getElementById("topic2").checked || document.getElementById("topic3").checked || document.getElementById("topic4").checked || document.getElementById("topic5").checked) {
+				if (issue == 0) {postForm();}
+			}
+			if (issue != 0) {alert("Please ensure all required fields are filled out");}
+		}		
+	</script>
+	<style>
+		input{
+			
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>
+			Sign up for our newsletter!
+		</h1>
+		<nav>
+			<a class="nav" href="index.html">Home</a> | 
+			<a class="nav" href="jd_A3_about.html">About</a> | 
+			<a class="nav" href="jd_A3_resume.html">Resume</a> | 
+			<a class="nav" href="jd_A3_web_skills.html">Web Skills</a> | 
+			<a class="nav" href="jd_A3_other_sites.html">Other Sites By Me</a> | 
+			<a class="nav" href="jd_A3_python_skills.html">Python Skills</a> | 
+			<a class="nav" href="jd_A3_scratch.html">My Scratch projects</a> | 
+			<a class="nav" href="http://plefungaprogramming.eu5.org">More from me</a>
+		</nav>
+	</header>
+	<hr>
+	<h2>XYZHealthcare Corporation- Newsletter Signup</h2>
+	<p>
+	<form id="myForm">
+		<label for="fname">First name:<inline style="color: red; font-size: 12px;">*</inline></label><br />
+		<input type="text" id="fname" name="fname" value="" maxlength="60"><br />
+		<label for="lname">Last name:<inline style="color: red; font-size: 12px;">*</inline></label><br />
+		<input type="text" id="lname" name="lname" value="" maxlength="60"><br />
+		<label for="email">Email address:<inline style="color: red; font-size: 12px;">*</inline></label><br />
+		<input type="email" id="email" name="email" value="" maxlength="60"><br />
+		What is your age range?<inline style="color: red; font-size: 12px;">*</inline><br />
+		<input type="radio" id="age" name="age" value="15-25">
+		<label for="age">15-25</label><br />
+		<input type="radio" id="age" name="age" value="26-35">
+		<label for="age">26-35</label><br />
+		<input type="radio" id="age" name="age" value="36-45">
+		<label for="age">36-45</label><br />
+		<input type="radio" id="age" name="age" value="46-55">
+		<label for="age">46-55</label><br />
+		<input type="radio" id="age" name="age" value="55+">
+		<label for="age">55+</label><br />
+		What would you like to sign up to hear about? (select at least one)<inline style="color: red; font-size: 12px;">*</inline> <br />
+		<input type="checkbox" id="topic1" name="topic1" value="New products"><label for="topic1"> New Products</label><br />
+		<input type="checkbox" id="topic2" name="topic2" value="Healthcare Drone development updates"><label for="topic2"> Healthcare Drone development updates</label><br />
+		<input type="checkbox" id="topic3" name="topic3" value="Changes in our stocks"><label for="topic3"> Changes in our stocks</label><br />
+		<input type="checkbox" id="topic4" name="topic4" value="Messages from our CEO"><label for="topic4"> Messages from our CEO</label><br />
+		<input type="checkbox" id="topic5" name="topic5" value="Other"><label for="topic5"> Other</label><br />
+		<br />
+		<label for="comments">Please leave us some feedback below</label><br />
+		<textarea id="comments" name="comments" rows="3" cols="60"></textarea><br />
+		<input type="button" value="Reset" onclick="resetForm()">
+		<br />
+		<input type="button" value ="Sign up" onclick="submitForm()">
+	</form>
+	<inline style="color: red; font-size: 12px;">* required</inline>
+	</p>
+	<footer>
+		<address>
+			Contact: Josh de Roover <br />Ph: +61 31 415 926 <br /> Email: <a href="mailto:joshderoover@plefunga.com" target="_blank">joshderoover@plefunga.com</a>
+		</address>
+	</footer>
+</body>
+</html>
