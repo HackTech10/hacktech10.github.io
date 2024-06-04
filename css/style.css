@@ -1,0 +1,85 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+body {
+	font-family: Arial, Helvetica, Verdana, sans-serif;
+	background-color: #f2f2f2;
+	/* Slightly darker than full white, easier on my eyes working on this late at night */
+}
+h1 {
+	text-align: center;
+}
+img {pointer-events: none;}
+h2 {font-weight: bold; text-decoration: underline;}
+#centered {text-align: center;}
+header {
+	background-color: #003366;
+	color: white;
+	padding: 5px;
+	border-radius: 2px;
+}
+nav {
+	text-align: center;
+	color: whitesmoke;
+}
+a.nav {
+	color: whitesmoke;
+	padding: 5px;
+	text-decoration: none;
+}
+a.nav:hover {
+	color: #003366;
+	background-color: whitesmoke;
+	border-radius: 5px;
+	text-decoration: underline;
+}
+footer{
+	background-color: #003366;
+	color: white;
+	padding: 10px;
+	align-content: baseline;
+}
+table {
+	border-collapse: collapse;
+}
+th{
+	text-align: left;
+	border: 2px solid black;
+	padding-right: 5px;
+}
+td{
+	text-align: left;
+	border: 2px solid black;
+	padding-right: 5px;
+}
+ul {list-style-type: square; font-size: 13px;}
+ol {list-style-type: upper-roman; font-size: 13px;}
+li {padding-bottom: 4px;}
+p {font-size: 14px;}
+
+@media print {
+	nav, footer, img, hr {display: none;}
+	ul, ol {font-size: 14px;}
+	p {font-size: 16px}
+	header {
+		background-color: transparent;
+		color: black;
+	}
+}
+/* 
+
+		 0000             0000        7777777777777777/========___________
+	 00000000         00000000      7777^^^^^^^7777/ || ||   ___________
+	000    000       000    000     777       7777/=========//
+ 000      000     000      000             7777// ((     //
+0000      0000   0000      0000           7777//   \\   //
+0000      0000   0000      0000          7777//========//
+0000      0000   0000      0000         7777
+0000      0000   0000      0000        7777
+ 000      000     000      000        7777
+	000    000       000    000       77777
+	 00000000         00000000       7777777
+		 0000             0000        777777777
+James bond wishes he has as much style as this document
+*/
